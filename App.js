@@ -1,35 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// You can import supported modules from npm
-import { Card } from 'react-native-paper';
+// Importa as telas
+import Home from './screens/home';
+import Quiz from './screens/quiz';
+import Ranking from './screens/ranking';
+import Curiosidades from './screens/curiosidades';
+import Sobre from './screens/sobre';
 
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{ title: 'Lana Del Rey Quiz 💋' }} 
+        />
+        <Stack.Screen name="Quiz" component={Quiz} options={{ title: 'Quiz' }} />
+        <Stack.Screen name="Ranking" component={Ranking} options={{ title: 'Ranking' }} />
+        <Stack.Screen name="Curiosidades" component={Curiosidades} options={{ title: 'Curiosidades' }} />
+        <Stack.Screen name="Sobre" component={Sobre} options={{ title: 'Sobre' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
