@@ -1,68 +1,87 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Vibration } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { tema, estilos } from '../styles/tema_estilos';
+import { ativarVibracao } from '../services/funcoes_service';
 
-export default function Home({ navigation }) {
-  const handlePress = (screen) => {
-    Vibration.vibrate(80); // vibração rápida
-    navigation.navigate(screen); // navega para a tela certa
+export default function Home({ aoNavegar }) {
+  const handleNavegar = (tela) => {
+    ativarVibracao();
+    aoNavegar(tela);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lana Del Rey Quiz 💋</Text>
-      <Text style={styles.subtitle}>Descubra o quanto você sabe sobre a Lana Del Rey!</Text>
+    <ScrollView 
+      style={estilos.fundo} 
+      contentContainerStyle={estilos.scrollContainer}
+      showsVerticalScrollIndicator={false}
+    >
+      <View style={estilos.headerContainer}>
+        <Text style={estilos.tituloPrincipal}>LANA DEL REY</Text>
+        <Text style={estilos.tituloSecundario}>QUIZ</Text>
+        <View style={estilos.divisorNeon} />
+        <Text style={estilos.subtitulo}>
+          Teste seu conhecimento sobre a Lana del Rey
+        </Text>
+      </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => handlePress('Quiz')}>
-        <Text style={styles.buttonText}>Jogar</Text>
-      </TouchableOpacity>
+      <View style={estilos.bannerContainer}>
+        <Image 
+          source={{ uri: 'https://akamai.sscdn.co/uploadfile/letras/fotos/2/1/3/b/213b739c1418a77f39d4719787d6a03d.jpg' }}
+          style={estilos.bannerImagem}
+          resizeMode="cover"
+        />
+        <View style={estilos.bannerOverlay}>
+        </View>
+      </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => handlePress('Ranking')}>
-        <Text style={styles.buttonText}>Ranking</Text>
-      </TouchableOpacity>
+      <View style={estilos.cardPrincipal}>
+        <TouchableOpacity 
+          style={estilos.botaoPrimario} 
+          onPress={() => handleNavegar('Quiz')}
+          activeOpacity={0.8}
+        >
+          <View style={estilos.botaoConteudo}>
+            <View style={{ flex: 1 }}>
+              <Text style={estilos.textoBotaoPrimario}>Iniciar Quiz</Text>
+              <Text style={estilos.botaoSubtexto}>Prove seu conhecimento</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+        
+        {/* Botão Ranking */}
+        <TouchableOpacity 
+          style={estilos.botaoSecundario} 
+          onPress={() => handleNavegar('Ranking')}
+          activeOpacity={0.8}
+        >
+          <View style={estilos.botaoConteudo}>
+            <View style={{ flex: 1 }}>
+              <Text style={estilos.textoBotaoSecundario}>Ranking do Quiz</Text>
+              <Text style={estilos.botaoSubtextoSecundario}>Veja os melhores</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => handlePress('Curiosidades')}>
-        <Text style={styles.buttonText}>Curiosidades</Text>
-      </TouchableOpacity>
+      <View style={estilos.gridBotoes}>
+        <TouchableOpacity 
+          style={estilos.botaoGrid} 
+          onPress={() => handleNavegar('Curiosidades')}
+          activeOpacity={0.8}
+        >
+          <Text style={estilos.botaoGridTexto}>Curiosidades</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handlePress('Sobre')}>
-        <Text style={styles.buttonText}>Sobre</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity 
+          style={estilos.botaoGrid} 
+          onPress={() => handleNavegar('Sobre')}
+          activeOpacity={0.8}
+        >
+          <Text style={estilos.botaoGridTexto}>Sobre</Text>
+        </TouchableOpacity>
+      </View>
+
+      
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    backgroundColor: '#f8bbd0', 
-    padding: 20 
-  },
-  title: { 
-    fontSize: 28, 
-    fontWeight: 'bold', 
-    color: '#880e4f', 
-    marginBottom: 10, 
-    textAlign: 'center' 
-  },
-  subtitle: { 
-    fontSize: 16, 
-    color: '#ad1457', 
-    textAlign: 'center', 
-    marginBottom: 30 
-  },
-  button: { 
-    backgroundColor: '#d81b60', 
-    paddingVertical: 12, 
-    borderRadius: 10, 
-    marginVertical: 5,
-    width: '70%',       
-    alignItems: 'center' 
-  },
-  buttonText: { 
-    color: '#fff', 
-    fontSize: 16, 
-    fontWeight: 'bold' 
-  }
-});
