@@ -1,30 +1,42 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-// Importa as telas
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, StatusBar, Text } from 'react-native';
 import Home from './screens/home';
 import Quiz from './screens/quiz';
 import Ranking from './screens/ranking';
 import Curiosidades from './screens/curiosidades';
 import Sobre from './screens/sobre';
+import { tema } from './styles/tema_estilos';
 
-const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [telaAtual, setTelaAtual] = useState('Home');
+  
+
+  
+  const aoNavegar = (telaAlvo) => {
+    setTelaAtual(telaAlvo);
+  };
+
+  const renderizarTela = () => {
+    switch (telaAtual) {
+      case 'Quiz':
+        return <Quiz aoNavegar={aoNavegar} />;
+      case 'Ranking':
+        return <Ranking aoNavegar={aoNavegar} />;
+      case 'Curiosidades':
+        return <Curiosidades aoNavegar={aoNavegar} />;
+      case 'Sobre':
+        return <Sobre aoNavegar={aoNavegar} />;
+      case 'Home':
+      default:
+        return <Home aoNavegar={aoNavegar} />;
+    }
+  };
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen 
-          name="Home" 
-          component={Home} 
-          options={{ title: 'Lana Del Rey Quiz 💋' }} 
-        />
-        <Stack.Screen name="Quiz" component={Quiz} options={{ title: 'Quiz' }} />
-        <Stack.Screen name="Ranking" component={Ranking} options={{ title: 'Ranking' }} />
-        <Stack.Screen name="Curiosidades" component={Curiosidades} options={{ title: 'Curiosidades' }} />
-        <Stack.Screen name="Sobre" component={Sobre} options={{ title: 'Sobre' }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{ flex: 1, backgroundColor: tema.bg }}>
+      <StatusBar barStyle="light-content" backgroundColor={tema.bg} />
+      {renderizarTela()}
+    </SafeAreaView>
   );
 }
