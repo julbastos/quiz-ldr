@@ -29,20 +29,23 @@ export default function Ranking({ aoNavegar }) {
   };
 
   useEffect(() => {
+    // Carrega o ranking quando a tela é montada
     carregarRanking();
   }, []); 
 
+  // Função que executa o reset após a confirmação
   const executarReset = async () => {
     try {
       await AsyncStorage.removeItem(CHAVE_RANKING);
       setRankings([]);
-      setShowConfirm(false);
+      setShowConfirm(false); // Fecha o modal
     } catch (erro) {
       console.error("Erro ao resetar ranking:", erro);
-      setShowConfirm(false); 
+      setShowConfirm(false); // Fecha o modal mesmo com erro
     }
   };
 
+  // Função para iniciar o processo de reset (mostra o modal de confirmação)
   const resetarRanking = () => {
     ativarVibracao();
     setShowConfirm(true);
@@ -140,7 +143,7 @@ export default function Ranking({ aoNavegar }) {
         
         {/* Botão Voltar */}
         <TouchableOpacity 
-     
+ 
           style={[styles.botaoVoltar, { backgroundColor: tema.primary, width: '40%' }]} 
           onPress={() => aoNavegar('Home')}
           activeOpacity={0.8}
@@ -168,14 +171,14 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 36,
     fontWeight: '700',
-    color: tema.text, 
+    color: tema.text, // Cor original
     textAlign: 'center',
     letterSpacing: 4,
     opacity: 0.95,
   },
   subtitulo: {
     fontSize: 14,
-    color: tema.textSecundario,
+    color: tema.textSecundario, // Cor original
     fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 5,
@@ -184,7 +187,7 @@ const styles = StyleSheet.create({
   divisor: {
     width: 80,
     height: 2,
-    backgroundColor: tema.primary, 
+    backgroundColor: tema.primary, // Cor original
     marginTop: 10,
     borderRadius: 10,
     opacity: 0.6,
@@ -214,17 +217,17 @@ const styles = StyleSheet.create({
   },
   itemPrimeiro: {
     backgroundColor: tema.cardClaro,
-    borderColor: '#FFD700', 
+    borderColor: '#FFD700', // Gold
     borderWidth: 2,
   },
   itemSegundo: {
     backgroundColor: tema.cardClaro,
-    borderColor: '#C0C0C0', 
+    borderColor: '#C0C0C0', // Silver
     borderWidth: 1.5,
   },
   itemTerceiro: {
     backgroundColor: tema.cardClaro,
-    borderColor: '#CD7F32', 
+    borderColor: '#CD7F32', // Bronze
     borderWidth: 1.5,
   },
   itemEsquerda: {
@@ -276,13 +279,13 @@ const styles = StyleSheet.create({
   },
   botoesContainer: {
     marginTop: 15,
-    gap: 8, 
+    gap: 8, // Espaçamento entre os botões
     width: '100%',
-    alignItems: 'center',
+    alignItems: 'center', // Centraliza os botões no contêiner
   },
   botaoReset: {
     backgroundColor: 'transparent',
-    paddingVertical: 10, 
+    paddingVertical: 10, // Reduzido para 10
     borderRadius: 12,
     alignItems: 'center',
     borderWidth: 1.5,
