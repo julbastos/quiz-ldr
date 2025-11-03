@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  // Header
   headerContainer: {
     alignItems: 'center',
     marginBottom: 25,
@@ -111,6 +112,7 @@ const styles = StyleSheet.create({
     opacity: 0.85,
   },
 
+  // Lista
   listaContainer: {
     width: '100%',
     marginBottom: 20,
@@ -167,10 +169,11 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
 
+  // Botão Voltar
   botaoVoltar: {
     marginTop: 10,
     marginBottom: 20,
-    backgroundColor: tema.primary,
+    backgroundColor: tema.primarAy,
     paddingVertical: 14,
     paddingHorizontal: 30,
     borderRadius: 12,
