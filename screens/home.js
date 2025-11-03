@@ -15,6 +15,7 @@ export default function Home({ aoNavegar }) {
       contentContainerStyle={estilos.scrollContainer}
       showsVerticalScrollIndicator={false}
     >
+      {/* Header com ícone e títulos */}
       <View style={estilos.headerContainer}>
         <Text style={estilos.tituloPrincipal}>LANA DEL REY</Text>
         <Text style={estilos.tituloSecundario}>QUIZ</Text>
@@ -34,7 +35,9 @@ export default function Home({ aoNavegar }) {
         </View>
       </View>
 
+      {/* Card com botões principais */}
       <View style={estilos.cardPrincipal}>
+        {/* Botão Iniciar Quiz */}
         <TouchableOpacity 
           style={estilos.botaoPrimario} 
           onPress={() => handleNavegar('Quiz')}
@@ -63,6 +66,7 @@ export default function Home({ aoNavegar }) {
         </TouchableOpacity>
       </View>
 
+      {/* Grid de botões secundários */}
       <View style={estilos.gridBotoes}>
         <TouchableOpacity 
           style={estilos.botaoGrid} 
