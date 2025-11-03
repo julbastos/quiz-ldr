@@ -94,6 +94,7 @@ const stylesLocal = StyleSheet.create({
     alignItems: 'center',
   },
   
+  // Header
   headerContainer: {
     alignItems: 'center',
     marginBottom: 25,
@@ -116,6 +117,7 @@ const stylesLocal = StyleSheet.create({
     opacity: 0.6,
   },
 
+  // Card Principal
   cardPrincipal: {
     width: '100%',
     backgroundColor: tema.card,
@@ -130,6 +132,7 @@ const stylesLocal = StyleSheet.create({
     elevation: 6,
   },
 
+  // Seções
   secao: {
     marginBottom: 25,
   },
@@ -151,6 +154,7 @@ const stylesLocal = StyleSheet.create({
     color: tema.text,
   },
 
+  // Tecnologias
   techItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -163,6 +167,7 @@ const stylesLocal = StyleSheet.create({
     marginTop: -2,
   },
 
+  // Botão Voltar
   botaoVoltar: {
     marginTop: 20,
     marginBottom: 20,
