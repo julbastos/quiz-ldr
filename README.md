@@ -21,7 +21,7 @@ O projeto faz uso de dois atuadores para enriquecer a experiência do usuário:
 - **Som (expo-av):** essencial para o Quiz Musical, onde o usuário deve identificar a faixa sonora.  
 - **Vibração (Vibration):** fornece feedback tátil imediato em acertos e erros.
 
-----
+---
 
 ## 2. Tecnologias e Arquitetura
 
@@ -74,16 +74,15 @@ O aplicativo possui cinco módulos de tela principais, estruturados para garanti
 
 ---
 
-
 ## 4. Instalação e Execução
 
 ### Pré-requisitos
 - **Node.js** instalado  
-- **Expo CLI** instalado globalmente (`npm install -g expo-cli`) ou uso de `npx expo`
+- **Expo CLI** instalado globalmente ('npm install -g expo-cli') ou uso de 'npx expo'
 
 ### Passos
 
-```bash
+'''bash
 # Clone o Repositório
 git clone https://github.com/julbastos/quiz-ldr.git
 cd quiz-ldr
@@ -94,26 +93,24 @@ npm install
 yarn install
 
 # Execute o Projeto
-npx expo start
+npx expo start  
 
-## 5. Acesso
+# 5. Acesso
 
 - **Físico:** Escaneie o QR Code no terminal com o aplicativo **Expo Go** (disponível para Android e iOS).  
-- **Emulador:** Pressione `a` para Android ou `i` para iOS no terminal.
+- **Emulador:** Pressione 'a' para Android ou 'i' para iOS no terminal.
 
----
+# 6. Aprendizados e Próximos Passos
 
-## 6. Aprendizados e Próximos Passos
-
-### Aprendizados
+## Aprendizados
 
 O desenvolvimento deste projeto proporcionou um aprofundamento na gestão de estado complexa e na integração de funcionalidades nativas em React Native:
 
-- **Manipulação de Atuadores:** A integração do `expo-av` exigiu um entendimento rigoroso do ciclo de vida dos objetos de som para garantir que os recursos de áudio fossem carregados e descarregados corretamente, evitando consumo excessivo de memória.  
-- **Modularização e Arquitetura:** O isolamento da lógica de negócio (como as funções de serviço para atuadores e AsyncStorage) em módulos separados contribuiu para um código mais limpo e de fácil manutenção.  
+- **Manipulação de Atuadores:** A integração do 'expo-av' exigiu um entendimento rigoroso do ciclo de vida dos objetos de som para garantir que os recursos de áudio fossem carregados e descarregados corretamente, evitando consumo excessivo de memória.  
+- **Modularização e Arquitetura:** O isolamento da lógica de negócio (como as funções de serviço para atuadores e AsyncStorage) em módulos separados contribuiu para um código mais limpo.  
 - **Persistência de Dados:** Foi consolidada a prática de salvar e recuperar dados estruturados (JSON) no AsyncStorage, crucial para a funcionalidade de ranking.
 
-### Próximos Passos (Melhorias Futuras)
+## Próximos Passos (Melhorias Futuras)
 
 - **Integração com Firebase:** Substituir o armazenamento local (AsyncStorage) pelo Firebase Firestore para implementar um ranking global, permitindo a comparação de pontuações entre múltiplos usuários.  
 - **Temporizador:** Adicionar um componente de temporizador com contagem regressiva para aumentar a dificuldade e a pressão competitiva do quiz.  
