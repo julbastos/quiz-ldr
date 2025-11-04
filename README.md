@@ -21,9 +21,7 @@ O projeto faz uso de dois atuadores para enriquecer a experiência do usuário:
 - **Som (expo-av):** essencial para o Quiz Musical, onde o usuário deve identificar a faixa sonora.  
 - **Vibração (Vibration):** fornece feedback tátil imediato em acertos e erros.
 
-### Complexidade Funcional
-A complexidade do aplicativo é demonstrada pela estrutura modular do quiz, que oferece múltiplos níveis de dificuldade (Fácil, Médio e Difícil) e diversos formatos de perguntas (com texto, imagem e áudio).  
----
+----
 
 ## 2. Tecnologias e Arquitetura
 
