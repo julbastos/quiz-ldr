@@ -76,25 +76,25 @@ O aplicativo possui cinco módulos de tela principais, estruturados para garanti
 
 ## 4. Instalação e Execução
 
-### Pré-requisitos
+### 🧩 Pré-requisitos
 - **Node.js** instalado  
 - **Expo CLI** instalado globalmente (`npm install -g expo-cli`) ou uso de `npx expo`
 
-### Passos
+---
 
-# Clone o Repositório
+### Passos para Execução
+
+# 1. Clone o Repositório
 git clone https://github.com/julbastos/quiz-ldr.git
 cd quiz-ldr
 
-# Instale as Dependências
-npm install ou yarn install
+# 2. Instale as Dependências
+npm install
+# ou
+yarn install
 
-# Execute o Projeto
-npx expo start  
-# 5. Acesso
-
-- **Físico:** Escaneie o QR Code no terminal com o aplicativo **Expo Go** (disponível para Android e iOS).  
-- **Emulador:** Pressione 'a' para Android ou 'i' para iOS no terminal.
+# 3. Execute o Projeto
+npx expo start
 
 # 6. Aprendizados e Próximos Passos
 
