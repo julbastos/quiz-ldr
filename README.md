@@ -1,19 +1,17 @@
 # Quiz LDR
 
-**Desenvolvido por Julia Bastos - RA: 22124071-6**
+**Desenvolvido por Júlia Bastos Barreto - RA: 22124071-6**
 
 Este projeto consiste no desenvolvimento de uma aplicação móvel em React Native (Expo) que opera como um quiz temático. O objetivo primário, alinhado com a liberdade de tema concedida, foi selecionar um assunto de interesse pessoal para garantir a viabilidade e o engajamento no processo de desenvolvimento.
 
-O aplicativo visa desafiar os conhecimentos dos usuários sobre a artista e, em termos técnicos, implementa requisitos fundamentais de persistência de dados local (ranking de pontuações) e interação aprimorada via atuadores do dispositivo.
+O aplicativo desafia os conhecimentos dos usuários sobre a artista e, em termos técnicos, implementa requisitos fundamentais de persistência de dados local (ranking de pontuações) e interação aprimorada via atuadores do dispositivo.
 
 ---
 
 ## 1. Visão Geral e Requisitos
 
-O projeto foi estruturado para cumprir rigorosamente os requisitos técnicos mínimos estabelecidos, ao mesmo tempo em que oferece uma funcionalidade de maior complexidade.
-
 ### Estrutura de Telas
-O aplicativo possui uma navegação completa, totalizando cinco telas distintas (Home, Quiz, Ranking, Curiosidades e Sobre), superando o mínimo exigido de quatro.
+O aplicativo possui uma navegação completa, totalizando cinco telas distintas (Home, Quiz, Ranking, Curiosidades e Sobre).
 
 ### Persistência de Dados (Ranking Local)
 Para atender ao requisito de armazenamento de dados, foi implementada a biblioteca **AsyncStorage**. Essa solução permite a persistência local das pontuações dos usuários, estabelecendo um *Ranking Local* durável que exibe as maiores pontuações por dificuldade.
@@ -24,9 +22,7 @@ O projeto faz uso de dois atuadores para enriquecer a experiência do usuário:
 - **Vibração (Vibration):** fornece feedback tátil imediato em acertos e erros.
 
 ### Complexidade Funcional
-A complexidade do aplicativo é demonstrada pela estrutura modular do quiz, que oferece múltiplos níveis de dificuldade (Fácil, Médio e Difícil) e diversos formatos de perguntas (texto, imagem e áudio).  
-A funcionalidade de Login/Cadastro foi intencionalmente omitida para focar na lógica central e complexa do quiz.
-
+A complexidade do aplicativo é demonstrada pela estrutura modular do quiz, que oferece múltiplos níveis de dificuldade (Fácil, Médio e Difícil) e diversos formatos de perguntas (com texto, imagem e áudio).  
 ---
 
 ## 2. Tecnologias e Arquitetura
@@ -35,7 +31,7 @@ O projeto foi desenvolvido em **React Native** utilizando a plataforma **Expo** 
 
 ### 2.1 Bibliotecas Essenciais
 
-O arquivo `package.json` define as seguintes dependências críticas que garantem o cumprimento dos requisitos:
+O arquivo `package.json` define as seguintes dependências:
 
 - `@react-native-async-storage/async-storage`: Solução assíncrona para persistência local de dados (o ranking).  
 - `expo-av`: Biblioteca principal para o uso do Atuador de Som.  
@@ -44,7 +40,7 @@ O arquivo `package.json` define as seguintes dependências críticas que garante
 ### 2.2 Visão Técnica da Arquitetura e Componentização
 
 A arquitetura do projeto está centralizada no `App.js` como roteador.  
-A lógica de negócio está modularizada em `services/` e os estilos em `styles/`, garantindo a separação de preocupações (SoC).
+A lógica de negócio está modularizada em `services/` e os estilos em `styles/`.
 
 | Módulo Principal | Função Técnica e Destaque |
 |------------------|----------------------------|
@@ -80,15 +76,8 @@ O aplicativo possui cinco módulos de tela principais, estruturados para garanti
 
 ---
 
-## 4. Demonstração
 
-### Prévia do Aplicativo
-
-![Demonstração do Quiz LDR](demo.gif)
-
----
-
-## 5. Instalação e Execução
+## 4. Instalação e Execução
 
 ### Pré-requisitos
 - **Node.js** instalado  
@@ -109,14 +98,14 @@ yarn install
 # Execute o Projeto
 npx expo start
 
-## 6. Acesso
+## 5. Acesso
 
 - **Físico:** Escaneie o QR Code no terminal com o aplicativo **Expo Go** (disponível para Android e iOS).  
 - **Emulador:** Pressione `a` para Android ou `i` para iOS no terminal.
 
 ---
 
-## 7. Aprendizados e Próximos Passos
+## 6. Aprendizados e Próximos Passos
 
 ### Aprendizados
 
