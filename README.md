@@ -76,29 +76,25 @@ O aplicativo possui cinco módulos de tela principais, estruturados para garanti
 
 ## 4. Instalação e Execução
 
-### 🧩 Pré-requisitos
+### Pré-requisitos
 - **Node.js** instalado  
 - **Expo CLI** instalado globalmente (`npm install -g expo-cli`) ou uso de `npx expo`
 
 ---
 
-### Passos para Execução
+## Passos para Execução
 
-# 1. Clone o Repositório
+### 1. Clone o Repositório
 git clone https://github.com/julbastos/quiz-ldr.git
 cd quiz-ldr
 
-# 2. Instale as Dependências
-npm install
-# ou
-yarn install
+### 2. Instale as Dependências
+npm install ou yarn install
 
-# 3. Execute o Projeto
+### 3. Execute o Projeto
 npx expo start
 
 # 6. Aprendizados e Próximos Passos
-
-## Aprendizados
 
 O desenvolvimento deste projeto proporcionou um aprofundamento na gestão de estado complexa e na integração de funcionalidades nativas em React Native:
 
